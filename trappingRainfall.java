@@ -25,7 +25,7 @@ public class trappingRainfall {
             waterTrap += Math.min(leftBoundary[i], rightBoundary[i]) - bars[i];
         }
        
-        System.out.println("Total water trap while rainfall: "+waterTrap);
+        System.out.println("Total water trap while rainfall: "+waterTrap+" m\u00B2");
         
     }
 
