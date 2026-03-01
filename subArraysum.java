@@ -34,23 +34,29 @@ public class subArraysum {
 
         int curSum=0, maxSum=Integer.MIN_VALUE;
 
+        int neg = Integer.MIN_VALUE;
+
         for(int i=0;i<arr.length;i++)
-        {
+        {   
+            neg = neg<arr[i] ? arr[i]:neg;
+            
             curSum += arr[i];
             if (curSum>maxSum) {
                 maxSum  = curSum;
-        }else if(curSum<0)
-        {
-            curSum =0;
+            }else if(curSum<0)
+            {
+                curSum =0;
 
-        }
+            }
             
         }
+        // maxSum = maxSum>neg? maxSum:neg;
+
          System.out.println("Maximum sum: "+maxSum);
     }
     public static void main(String[] args) {
 
-        int arr[] = {-2,-3,4,-1,-2,1,5,-3};
+        int arr[] = {-2,-3,-4,-1,-2,-1,-5,-3};
         subarrSum(arr);
         kadanes(arr);
 
