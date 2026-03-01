@@ -2,7 +2,7 @@ public class subArraysum {
     // Prefix Array
     public static void subarrSum(int arr[])
     {
-
+        // complexity O(n^2)
         int prefix[] = new int[arr.length];
         int curSum=0, max=Integer.MIN_VALUE;
         prefix[0] = arr[0];
@@ -25,12 +25,34 @@ public class subArraysum {
                 // System.out.println("Current Sum = "+ curSum);
             }
         }
-        System.out.println("Maximum sum = "+max);
+        System.out.println("Maximum sum: "+max);
+    }
+
+    public static void kadanes(int arr[])
+    {
+        // Time complexity O(n)
+
+        int curSum=0, maxSum=Integer.MIN_VALUE;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            curSum += arr[i];
+            if (curSum>maxSum) {
+                maxSum  = curSum;
+        }else if(curSum<0)
+        {
+            curSum =0;
+
+        }
+            
+        }
+         System.out.println("Maximum sum: "+maxSum);
     }
     public static void main(String[] args) {
 
-        int arr[] = {6,-2,6,-1,-3,10};
+        int arr[] = {-2,-3,4,-1,-2,1,5,-3};
         subarrSum(arr);
+        kadanes(arr);
 
     }
 }
