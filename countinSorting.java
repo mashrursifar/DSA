@@ -16,7 +16,8 @@ public class countinSorting {
 
         // Sorting
         int j=0;
-        for(int i=0;i<count.length;i++)
+
+        for(int i=0;i<arr.length;i++)
         {
             while (count[i]>0) {
                 {
