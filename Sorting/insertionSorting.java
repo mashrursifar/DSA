@@ -1,3 +1,4 @@
+package Sorting;
 public class insertionSorting {
 
     public static void insertionSort(int arr[])

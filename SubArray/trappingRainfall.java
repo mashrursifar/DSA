@@ -1,3 +1,4 @@
+package SubArray;
 public class trappingRainfall {
 
     public static void rainfallArea(int bars[]){

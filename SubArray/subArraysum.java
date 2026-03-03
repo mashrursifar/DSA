@@ -1,3 +1,4 @@
+package SubArray;
 public class subArraysum {
     // Prefix Array
     public static void subarrSum(int arr[])

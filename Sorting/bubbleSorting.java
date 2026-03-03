@@ -1,3 +1,4 @@
+package Sorting;
 public class bubbleSorting {
     public static void bubbleSort(int arr[])
     {
