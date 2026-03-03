@@ -14,12 +14,12 @@ public class insertionSorting {
         }
         // Inertion
         arr[prev+1] = curr;
-        
+
        }
     }
 
     public static void main(String[] args) {
-        int arr[] = {5,3,7,3,1,2};
+        int arr[] = {5,3,7,3,1,2,-2};
 
         insertionSort(arr);
 
