@@ -9,7 +9,7 @@ public class spiralArray {
         }
     }
 
-    
+
     public static void spiralPrint(int matrix[][]){
 
         int rowEnd = matrix.length-1;
@@ -21,21 +21,25 @@ public class spiralArray {
         {
             // Top
             for(int i = colStart;i<=colEnd;i++){
+                
                 System.out.print(matrix[rowStart][i]+" ");
             }
 
             // Right
             for(int i= rowStart+1; i<=rowEnd; i++){
+                
                 System.out.print(matrix[i][colEnd]+" ");
             }
 
             // Bottom
             for(int i= colEnd-1; i>=colStart; i--){
+                if(rowEnd==rowStart)return;
                 System.out.print(matrix[rowEnd][i]+" ");
             }
 
             // Left
             for(int i= rowEnd-1;i>rowStart;i--){
+                if(colEnd== colStart)return;
                 System.out.print(matrix[i][colStart]+" ");
             }
 
@@ -49,7 +53,7 @@ public class spiralArray {
 
     }
     public static void main(String[] args) {
-        int matrix[][] = {{1,2,3,4,17},{5,6,7,8,18},{9,10,11,12,19},{13,14,15,16,20},{21,22,23,24,25}};
+        int matrix[][] = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
 
         spiralPrint(matrix);
         
