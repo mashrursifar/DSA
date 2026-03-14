@@ -16,6 +16,14 @@ public class bit {
         return x | a;
 
     }
+
+    public static int clearBitRange(int x, int end, int start){
+        int left = ~0<<end;
+        int right = 1<<start-1;
+        int bitMask = left | right;
+
+        return x & bitMask;
+    }
     public static int clearBit(int x, int i){
 
         return x & ~1<<i;
@@ -28,6 +36,6 @@ public class bit {
         
         int x = 10;
 
-        System.out.println(clearBit(x, 1));
+        System.out.println(clearBitRange(x, 4, 2));
     }
 }
