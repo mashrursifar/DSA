@@ -5,19 +5,29 @@ public class majority {
     
     public static void maximum(int nums[]){
 
-        int n = nums.length, count = 1;
+        int n = nums.length;
+        int freq[] = new int[n];
+        int maxNum =0;
 
+        for(int i=0; i<n; i++){
 
-        Arrays.sort(nums);
-        int maxNum = nums[0];
-
-        for(int i=1;i<n;i++){
-
-            if(nums[i] == nums[i-1]){
-                count++;
-                maxNum = nums[i-1];
-            }
+            freq[nums[i]]++;
         }
+
+
+       int max = Integer.MIN_VALUE;
+       
+
+        for(int i=0; i<n; i++){
+            
+            if(freq[i]>max){
+                max = freq[i];
+                maxNum = i;
+            }
+            
+        }
+
+        System.out.println(maxNum +" is majority number which occurs "+max+" times");
         
     }
 
