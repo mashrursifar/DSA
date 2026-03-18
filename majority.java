@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class majority {
     
     public static void maximum(int nums[]){
