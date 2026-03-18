@@ -7,11 +7,16 @@ public class Constructor {
         
 
         Student s1 = new Student();
+        s1.roll = 30;
+        
         Student s2 = new Student("Sifar", 1);
         s2.marks[0] = 70;
         s2.marks[1] = 80;
         s2.marks[2] = 90;
+
         Student s3 = new Student(2);
+        System.out.println(s3.name);
+
         Student s4 = new Student(s2);
         s2.marks[2] = 100;
 
