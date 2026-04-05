@@ -8,7 +8,7 @@ public class spiralArray {
             System.out.println();
         }
     }
-
+// hudai
 
     public static void spiralPrint(int matrix[][]){
 
