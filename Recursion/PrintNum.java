@@ -1,6 +1,6 @@
 package Recursion;
 
-public class PrintDec {
+public class PrintNum {
     
     public static void printDec(int n){
         
