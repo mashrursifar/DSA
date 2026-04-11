@@ -1,4 +1,5 @@
 package Recursion;
+// T.C: 0(logn) S.C.: 0(logn)
 
 public class OptimizerPower {
     public static int pow(int x, int n){
