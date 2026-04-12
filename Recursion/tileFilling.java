@@ -15,7 +15,7 @@ public class tileFilling {
     }
 
     public static void main(String[] args) {
-        System.out.println(tileNumber(3));
+        System.out.println(tileNumber(4));
     }
     
 }
