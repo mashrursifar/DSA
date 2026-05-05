@@ -16,7 +16,7 @@ public class MergeSort {
         merge(arr, si, ei, mid);
 
 
-        return;
+     
     }
 
     public static void merge(int arr[], int si,int ei, int mid){
@@ -30,7 +30,7 @@ public class MergeSort {
             if(arr[i]<arr[j]){
                 temp[k] = arr[i];
                 i++;
-                j++;
+                k++;
             }else{
                 temp[k] = arr[j];
                 j++;
