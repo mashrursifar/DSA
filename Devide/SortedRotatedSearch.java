@@ -28,6 +28,7 @@ public class SortedRotatedSearch {
             }
         }
     }
+    
     public static void main(String[] args) {
         int arr[] = {5,6,7,0,1,2,3,4};
         System.out.println(search(arr, 7, 0, arr.length-1));
