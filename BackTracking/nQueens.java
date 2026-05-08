@@ -18,11 +18,26 @@ public class nQueens {
             printArr(chess);
             return;
         }
-        for(int j=0;j<chess.length;j++){
-            chess[row][j] = 'Q';
+        
+        for(int col=0;col<chess.length;col++){
+            if(isValid(chess,row,col)){chess[row][col] = 'Q';
             queens(chess, row+1);
+            chess[row][col] = 'x';}
+            
         }
 
+    }
+
+    public static void isValid(char chess[][], int row, int col){
+
+        // Upper
+        for(int i=0;i<row;i++){
+            
+        }
+
+        // Upper Left
+
+        // Upper Right
     }
     public static void main(String[] args) {
         int n=2;
