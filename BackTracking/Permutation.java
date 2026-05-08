@@ -2,23 +2,26 @@ package BackTracking;
 
 public class Permutation {
 
-    public static void findPermudation(String str,String ans,int i){
+    public static void findPermudation(String str,String ans){
 
-        if(i == str.length()){
+        if(str.length() ==0){
             System.out.println(ans);
             return;
         }
 
-        findPermudation(str, ans+str.charAt(i), i+1);
-        findPermudation(str, ans+str.charAt(i), i+1);
-        findPermudation(str, ans+str.charAt(i), i+1);
+    for(int i=0;i<str.length();i++){
+        char curr = str.charAt(i);
+        String newStr = str.substring(0,i) + str.substring(i+1);
+
+        findPermudation(newStr, ans+curr);
+    }
     }
 
 
     public static void main(String[] args) {
         String str = "abc";
 
-        findPermudation(str,"",0);
+        findPermudation(str,"");
     }
     
 }
