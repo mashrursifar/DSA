@@ -41,13 +41,13 @@ public class nQueens {
         }
 
         // Upper Left
-        for(int i=row-1,j=col; i>=0; i--,j--){
+        for(int i=row-1,j=col-1; i>=0 && j>=0; i--,j--){
             if(chess[i][j]=='Q')
                 return false;
         }
 
         // Upper Right
-        for(int i=row-1,j=col; i>=0; i--,j++){
+        for(int i=row-1,j=col+1; i>=0 && j<chess.length ; i--,j++){
             if(chess[i][j]=='Q')
                 return false;
         }
@@ -56,7 +56,7 @@ public class nQueens {
         return true;
     }
     public static void main(String[] args) {
-        int n=2;
+        int n=4;
         char chess[][] = new char[n][n];
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
