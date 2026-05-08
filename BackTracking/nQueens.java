@@ -20,24 +20,40 @@ public class nQueens {
         }
         
         for(int col=0;col<chess.length;col++){
-            if(isValid(chess,row,col)){chess[row][col] = 'Q';
-            queens(chess, row+1);
-            chess[row][col] = 'x';}
+            
+            if(isValid(chess,row,col)){
+            
+                chess[row][col] = 'Q';
+                queens(chess, row+1);
+                chess[row][col] = 'x';}
             
         }
 
     }
 
-    public static void isValid(char chess[][], int row, int col){
+    public static boolean isValid(char chess[][], int row, int col){
 
         // Upper
-        for(int i=0;i<row;i++){
-            
+        for(int i=row-1;i>=0;i--){
+            if(chess[i][col]=='Q'){
+                return false;
+            }
         }
 
         // Upper Left
+        for(int i=row-1,j=col; i>=0; i--,j--){
+            if(chess[i][j]=='Q')
+                return false;
+        }
 
         // Upper Right
+        for(int i=row-1,j=col; i>=0; i--,j++){
+            if(chess[i][j]=='Q')
+                return false;
+        }
+
+
+        return true;
     }
     public static void main(String[] args) {
         int n=2;
