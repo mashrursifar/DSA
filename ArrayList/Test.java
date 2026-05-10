@@ -1,6 +1,8 @@
 package ArrayList;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Test {
 
@@ -27,6 +29,9 @@ public class Test {
         System.out.println(list);
 
         swap(list,1,3);
+        System.out.println(list);
+
+        Collections.sort(list);
         System.out.println(list);
     }
     
