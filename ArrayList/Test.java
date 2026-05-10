@@ -1,7 +1,6 @@
 package ArrayList;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class Test {
@@ -32,6 +31,12 @@ public class Test {
         System.out.println(list);
 
         Collections.sort(list);
+        System.out.println(list);
+
+        Collections.reverse(list);
+        System.out.println(list);
+
+        Collections.sort(list, Collections.reverseOrder());
         System.out.println(list);
     }
     
