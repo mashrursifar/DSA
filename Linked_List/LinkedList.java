@@ -74,11 +74,34 @@ public class LinkedList {
             System.out.println("Linked List is empty");
             return;
         }else if(size ==1){
+            size--;
             head=tail=null;
             return;
         }
 
         head = head.next;
+        size--;
+    }
+
+    public void removeLast(){
+        if(size==0){
+            System.out.println("Linked List is empty");
+            return;
+        }else if(size ==1){
+            size--;
+            head=tail=null;
+            return;
+        }
+
+        int i=0;
+        Node tmp = head;
+        while (i<size-2) {
+            tmp = tmp.next;
+            i++;
+        }
+        tmp.next = null;
+        tail = tmp;
+        size--;
     }
 
     public void print(){
@@ -111,6 +134,11 @@ public class LinkedList {
         ll.print();
         ll.removeFirst();
         ll.print();
+        ll.removeLast();
+        ll.print();
+        ll.add(2, 11);
+        ll.print();
+        System.out.println(size);
        
     }
 }
