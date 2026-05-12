@@ -1,33 +1,31 @@
 package BackTracking;
 
+import java.util.*;
+
 public class nQueensLeetCode {
-    
-    public static void printArr(char chess[][]){
-        System.out.println("----------chess board-------------");
-        for(int i=0;i<chess.length;i++){
-            for(int j=0;j<chess.length;j++){
-                System.out.print(chess[i][j]+" ");
+
+     public static void boardMaker(char board[][], int row, List<List<String>> list) {
+        if (row == board.length) {
+            List<String> l = new ArrayList<>();
+            for (int i = 0; i < row; i++) {
+                StringBuilder s = new StringBuilder();
+                for (int j = 0; j < row; j++) {
+                    s.append(board[i][j]);
+                }
+                l.add(s.toString());
             }
-            System.out.println();
-        }
-        System.out.println();
-    }
-
-     public static void boardMaker(char board[][],int row){
-
-        if(row == board.length){
-            printArr(board);
+            list.add(l);
             return;
         }
-        for(int i=0; i<board.length; i++){
-            if(isValid(board,row,i)){
-            board[row][i] = 'Q';
-            boardMaker(board, row+1);
-            board[row][i] = '.';
+        
+        for (int i = 0; i < board.length; i++) {
+            if (isValid(board, row, i)) {
+                board[row][i] = 'Q';
+                boardMaker(board, row + 1, list);
+                board[row][i] = '.';
+            }
         }
-        }
-
-     }
+    }
 
      public static boolean isValid(char chess[][], int row, int col){
 
@@ -54,23 +52,21 @@ public class nQueensLeetCode {
         return true;
     }
 
-    public static char[][] solveNQueens(int n){
+    public static List<List<String>> solveNQueens(int n){
         char board[][] = new char[n][n];
+        List<List<String>> list = new ArrayList<>();
 
-        for(int i=0; i<n;i++){
-            for(int j=0; j<n; j++){
-                board[i][j] = '.';
-            }
+        // Initialize board with '.'
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(board[i], '.');
         }
 
-        boardMaker(board,0);
-
-
-        return board;
+        boardMaker(board, 0, list);
+        return list;
     }
 
 
     public static void main(String[] args) {
-        solveNQueens(4);
+        System.out.println(solveNQueens(4));
     }
 }
