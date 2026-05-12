@@ -118,6 +118,24 @@ public class LinkedList {
         return -1;
     }
 
+    public int helper(int key, Node head){
+
+        if(head == null)
+            return -1;
+
+        if(head.data == key)
+            return 0;
+        int idx = helper(key, head.next);
+
+        if(idx==-1)
+            return -1;
+
+        return idx+1;
+    }
+    public int recSearch(int key){
+        return helper(key, head);
+    }
+
     public void print(){
         if(head == null){
             System.out.println("Linked List is empty");
@@ -144,16 +162,16 @@ public class LinkedList {
 
         ll.print();
 
-        ll.add(2, 11);
-        ll.print();
-        ll.removeFirst();
-        ll.print();
-        ll.removeLast();
-        ll.print();
-        ll.add(2, 11);
-        ll.print();
+        // ll.add(2, 11);
+        // ll.print();
+        // ll.removeFirst();
+        // ll.print();
+        // ll.removeLast();
+        // ll.print();
+        // ll.add(2, 11);
+        // ll.print();
         System.out.println(size);
-        System.out.println(ll.search(11));
+        System.out.println(ll.recSearch(11));
        
     }
 }
