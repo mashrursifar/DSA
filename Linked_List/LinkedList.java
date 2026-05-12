@@ -2,10 +2,10 @@ package Linked_List;
 
 public class LinkedList {
 
-    public class Node {
+    public static class Node {
     
         int data;
-        LinkedList next;
+        Node next;
 
         Node(int data){
             this.data = data;
@@ -16,10 +16,36 @@ public class LinkedList {
 
     public static Node head;
     public static Node tail;
+
+    public void addFirst(int data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = tail = newNode;
+            return;
+        }
+        newNode.next = head;
+
+        head = newNode;
+    }
+
+    public void addLast(int data){
+        Node newNode = new Node(data);
+
+        if(head == null){
+            head = tail = newNode;
+            
+            return;
+        }
+
+        tail.next = newNode;
+        tail = newNode;
+    }
+
     public static void main(String[] args) {
        
 
         LinkedList ll = new LinkedList();
-        Node n = ll.new Node(12);
+        ll.addFirst(1);
+       
     }
 }
