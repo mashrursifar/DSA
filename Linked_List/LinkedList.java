@@ -41,14 +41,23 @@ public class LinkedList {
         tail = newNode;
     }
 
-    public void printLinkList(){
+    public void addMiddle(int idx, int data){
+        
+    }
+
+    public void print(){
+        if(head == null){
+            System.out.println("Linked List is empty");
+            return;
+        }
         Node tmp = head;
 
         while (tmp != null) {
-            System.out.println(tmp.data);
+            System.out.print(tmp.data+" ");
             tmp = tmp.next;
             
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -60,7 +69,7 @@ public class LinkedList {
         ll.addLast(3);
         ll.addLast(4);
 
-        ll.printLinkList();
+        ll.print();
        
     }
 }
