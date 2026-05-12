@@ -164,6 +164,37 @@ public class LinkedList {
         }
         head = prev;
     }
+
+    public void delNthFromN(int n){
+        // Calculate Size
+        int sz =0;
+        Node prev = head;
+
+        while (prev !=null) {
+            prev = prev.next;
+            sz++;
+        }
+        
+
+        // Index of the node from 1st node
+        int idx = sz - n; //4
+
+        // Find and delete the node
+        if(size==n){
+            head = head.next; //If it is first node
+            return;
+        }
+
+        int i=1;
+        prev = head;
+        while (i<idx) {
+            prev = prev.next;
+            
+            i++;
+        }
+
+        prev.next = prev.next.next;
+    }
     public static void main(String[] args) {
        
 
@@ -172,6 +203,9 @@ public class LinkedList {
         ll.addFirst(1);
         ll.addLast(3);
         ll.addLast(4);
+        ll.addLast(5);
+        ll.addLast(6);
+        ll.addLast(7);
 
         ll.print();
 
@@ -187,6 +221,7 @@ public class LinkedList {
         // System.out.println(ll.recSearch(11));
         ll.reverse();
         ll.print();
-       
+        ll.delNthFromN(3);
+        ll.print();
     }
 }
