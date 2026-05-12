@@ -104,6 +104,20 @@ public class LinkedList {
         size--;
     }
 
+    public int search(int key){
+        Node tmp = head;
+        int i =0;
+        while (tmp!=null) {
+            if(tmp.data==key){
+                return i;
+            }
+            tmp = tmp.next;
+            i++;    
+            
+        }
+        return -1;
+    }
+
     public void print(){
         if(head == null){
             System.out.println("Linked List is empty");
@@ -139,6 +153,7 @@ public class LinkedList {
         ll.add(2, 11);
         ll.print();
         System.out.println(size);
+        System.out.println(ll.search(11));
        
     }
 }
