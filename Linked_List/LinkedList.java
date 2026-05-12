@@ -42,15 +42,22 @@ public class LinkedList {
     }
 
     public void add(int idx, int data){
-        Node newNode = new Node(data);
+        if(idx==0){
+            addFirst(data);
+            return;
+        }    
 
+        Node newNode = new Node(data);
         Node tmp = head;
-        for(int i=0; i<idx; i++){
+        int i =0;
+
+        while (i<idx-1) {
             tmp = tmp.next;
+            i++;
         }
 
-        newNode.next = tmp;
-        tmp = newNode;
+        newNode.next = tmp.next;
+        tmp.next = newNode;
 
 
 
