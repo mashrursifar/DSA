@@ -332,11 +332,11 @@ public class LinkedList {
         ll.addLast(3);
         ll.addLast(4);
         ll.addLast(5);
-        
-        head.next.next.next.next.next = head.next.next;
-        System.out.println(ll.isCycleExists());
-        ll.removeCycle();
-        System.out.println(ll.isCycleExists());
         ll.print();
+    //     head.next.next.next.next.next = head.next.next;
+    //     System.out.println(ll.isCycleExists());
+    //     ll.removeCycle();
+    //     System.out.println(ll.isCycleExists());
+    //     ll.print();
     }
 } 
