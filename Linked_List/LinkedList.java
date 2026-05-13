@@ -243,19 +243,42 @@ public class LinkedList {
         return true;
     }
 
-    public void removeCycle(Node fast){
+    public void removeCycle(){
+        // Checking Cycle
+        Node fast = head;
         Node slow = head;
-        Node prev = null;
-        boolean c = false;
-        while (slow != fast) {
-            prev = fast;
+        boolean cycle = false;
+
+        while (fast != null && fast.next != null) {
             slow = slow.next;
-            // System.out.println(prev.data);
-            fast = fast.next; 
-            c = true;    
+            fast = fast.next.next;
+            if (slow==fast) {
+                cycle = true;
+                break;
+                
+            }
+            
         }
-        if(c){
-        prev.next = null;}
+        if(!cycle){
+            System.out.println("There is no cycle");
+            return;
+        }
+        // Breakinh Cycle
+        slow = head;
+        Node prev = null;
+        // Finding cycle point
+        while (slow != fast) {
+            slow = slow.next;
+            fast = fast.next; 
+        
+        }
+        // Breaking Cycle by assigning null
+        prev = fast;
+        while (prev.next != slow) {
+            prev = prev.next;
+        }
+        prev.next = null;
+        
     }
     public boolean isCycleExists(){
 
@@ -266,7 +289,6 @@ public class LinkedList {
             slow = slow.next;
             fast = fast.next.next;
             if (slow==fast) {
-                removeCycle(fast);
                 return true;
             }
             
@@ -306,13 +328,14 @@ public class LinkedList {
 
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
-        // ll.addLast(2);
-        // ll.addLast(3);
+        ll.addLast(2);
+        ll.addLast(3);
         ll.addLast(4);
         ll.addLast(5);
         
-        head.next.next.next = head;
+        head.next.next.next.next.next = head.next.next;
         System.out.println(ll.isCycleExists());
+        ll.removeCycle();
         System.out.println(ll.isCycleExists());
         ll.print();
     }
