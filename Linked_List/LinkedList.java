@@ -242,21 +242,36 @@ public class LinkedList {
 
         return true;
     }
+    public boolean isCycleExists(){
+
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow==fast) {
+                return true;
+            }
+            
+        }
+        return false;
+    }
     public static void main(String[] args) {
        
 
-        LinkedList ll = new LinkedList();
-        ll.addFirst(2);
-        ll.addFirst(1);
-        ll.addLast(3);
-        // ll.addLast(4);
-        ll.addLast(3);
-        ll.addLast(2);
-        ll.addLast(1);
+        // LinkedList ll = new LinkedList();
+        // ll.addFirst(2);
+        // ll.addFirst(1);
+        // ll.addLast(3);
+        // // ll.addLast(4);
+        // ll.addLast(3);
+        // ll.addLast(2);
+        // ll.addLast(1);
 
-        ll.print();
-        System.out.println(ll.checkPalindrome());
-        ll.print();
+        // ll.print();
+        // System.out.println(ll.checkPalindrome());
+        // ll.print();
 
         // ll.add(2, 11);
         // ll.print();
@@ -272,5 +287,13 @@ public class LinkedList {
         // ll.print();
         // ll.delNthFromN(3);
         // ll.print();
+
+        LinkedList ll = new LinkedList();
+        ll.addFirst(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        
+        // head.next.next.next = head;
+        System.out.println(ll.isCycleExists());
     }
 }
