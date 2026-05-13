@@ -245,13 +245,17 @@ public class LinkedList {
 
     public void removeCycle(Node fast){
         Node slow = head;
-        Node prev = fast;
+        Node prev = null;
+        boolean c = false;
         while (slow != fast) {
-            slow = slow.next;
             prev = fast;
-            fast = fast.next;     
+            slow = slow.next;
+            // System.out.println(prev.data);
+            fast = fast.next; 
+            c = true;    
         }
-        prev.next = null;
+        if(c){
+        prev.next = null;}
     }
     public boolean isCycleExists(){
 
@@ -302,11 +306,14 @@ public class LinkedList {
 
         LinkedList ll = new LinkedList();
         ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(3);
+        // ll.addLast(2);
+        // ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
         
         head.next.next.next = head;
         System.out.println(ll.isCycleExists());
         System.out.println(ll.isCycleExists());
+        ll.print();
     }
-}
+} 
