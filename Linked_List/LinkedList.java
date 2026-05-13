@@ -242,6 +242,17 @@ public class LinkedList {
 
         return true;
     }
+
+    public void removeCycle(Node fast){
+        Node slow = head;
+        Node prev = fast;
+        while (slow != fast) {
+            slow = slow.next;
+            prev = fast;
+            fast = fast.next;     
+        }
+        prev.next = null;
+    }
     public boolean isCycleExists(){
 
         Node fast = head;
@@ -251,6 +262,7 @@ public class LinkedList {
             slow = slow.next;
             fast = fast.next.next;
             if (slow==fast) {
+                removeCycle(fast);
                 return true;
             }
             
@@ -293,7 +305,8 @@ public class LinkedList {
         ll.addLast(2);
         ll.addLast(3);
         
-        // head.next.next.next = head;
+        head.next.next.next = head;
+        System.out.println(ll.isCycleExists());
         System.out.println(ll.isCycleExists());
     }
 }
