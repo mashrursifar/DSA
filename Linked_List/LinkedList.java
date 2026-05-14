@@ -295,20 +295,53 @@ public class LinkedList {
         }
         return false;
     }
+
+
+
     public Node getMid(Node head){
-        Node slow= head, fast = head;
+        Node slow= head, fast = head.next;
 
         while (fast != null && fast.next !=null) {
             slow = slow.next;
             fast = fast.next.next;
         }
+        System.out.println(slow.data);
         return slow;
     }
+
+
+
     private Node merge(Node lHead, Node rHead){
-        
+        Node mergedLL = new Node(-1);
+        Node tmp = mergedLL;
+
+        while (lHead != null && rHead != null) {
+            if (lHead.data<=rHead.data) {
+                tmp.next = lHead;
+                lHead = lHead.next;
+                tmp = tmp.next;
+            }else{
+                tmp.next = rHead;
+                rHead = rHead.next;
+                tmp = tmp.next;
+            }
+
+            
+        }
+        while (lHead!=null) {
+                tmp.next = lHead;
+                lHead = lHead.next;
+                tmp = tmp.next;
+            }
+            while (rHead != null) {
+                tmp.next = rHead;
+                rHead = rHead.next;
+                tmp = tmp.next;
+            }
+        return mergedLL.next;
     }
     public Node mergeSort(Node head){
-        if(head == null && head.next == null){
+        if(head == null || head.next == null){
             return head;
         }
         // Find mid
@@ -354,11 +387,15 @@ public class LinkedList {
         // ll.print();
 
         LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addLast(2);
         ll.addLast(3);
         ll.addLast(4);
+        ll.addFirst(1);
+        ll.addLast(2);
         ll.addLast(5);
+        ll.addLast(2);
+        ll.print();
+
+        head = ll.mergeSort(head);
         ll.print();
         
     //     head.next.next.next.next.next = head.next.next;
