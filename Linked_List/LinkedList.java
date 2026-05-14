@@ -295,6 +295,28 @@ public class LinkedList {
         }
         return false;
     }
+    public Node getMid(Node head){
+        Node slow= head, fast = head;
+
+        while (fast != null && fast.next !=null) {
+            
+        }
+    }
+    public Node mergeSort(Node head){
+        if(head == null && head.next == null){
+            return head;
+        }
+        // Find mid
+        Node mid = getMid(head);
+        // Left & rigt merge sort
+        Node rHead = mid.next;
+        mid.next =null;
+        Node newLeft = mergeSort(head);
+        Node newRight = mergeSort(rHead);
+    
+        // Merge
+        return merge(newLeft, newRight);
+    }
     public static void main(String[] args) {
        
 
@@ -333,6 +355,7 @@ public class LinkedList {
         ll.addLast(4);
         ll.addLast(5);
         ll.print();
+        
     //     head.next.next.next.next.next = head.next.next;
     //     System.out.println(ll.isCycleExists());
     //     ll.removeCycle();
