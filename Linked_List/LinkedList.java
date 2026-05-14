@@ -299,8 +299,13 @@ public class LinkedList {
         Node slow= head, fast = head;
 
         while (fast != null && fast.next !=null) {
-            
+            slow = slow.next;
+            fast = fast.next.next;
         }
+        return slow;
+    }
+    private Node merge(Node lHead, Node rHead){
+        
     }
     public Node mergeSort(Node head){
         if(head == null && head.next == null){
