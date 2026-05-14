@@ -299,7 +299,7 @@ public class LinkedList {
 
 
     public Node getMid(Node head){
-        Node slow= head, fast = head;
+        Node slow= head, fast = head.next;
 
         while (fast != null && fast.next !=null) {
             slow = slow.next;
