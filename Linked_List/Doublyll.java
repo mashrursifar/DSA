@@ -35,10 +35,18 @@ public class Doublyll {
 
     public void removeFirst(){
         if (head == null) {
+            System.out.println("Linked List is empty");
+            return;
+        }else if(head.next == null){
+            head = tail = null;
             return;
         }
 
-        
+        head = head.next;
+        head.prev = null;
+        size--;
+
+
     }
 
     public void print(){
@@ -61,6 +69,12 @@ public class Doublyll {
         dll.addFirst(1);
         dll.print();
         System.out.println(size);
+
+        dll.removeFirst();
+        dll.removeFirst();
+        dll.removeFirst();
+        dll.removeFirst();
+        dll.print();
         
     }
 }
