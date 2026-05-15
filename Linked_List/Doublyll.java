@@ -84,15 +84,15 @@ public class Doublyll {
             return;
         }
 
-        Node tmp = tail = head ;
-        Node prev = tmp.prev;
+        Node curr = tail = head ;
+        Node prev = curr.prev;
         Node next;
 
-        while (tmp != null) {
-            next = tmp.next;
-            tmp.next = prev;
-            prev = tmp;
-            tmp = next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
         head = prev;
     }
