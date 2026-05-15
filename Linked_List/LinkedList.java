@@ -242,6 +242,10 @@ public class LinkedList {
 
         return true;
     }
+    // LeetCode reverse ll
+    public void reverse(Node head,int left,int right){
+        
+    }
 
     public void removeCycle(){
         // Checking Cycle
