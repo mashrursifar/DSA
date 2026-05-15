@@ -242,10 +242,7 @@ public class LinkedList {
 
         return true;
     }
-    // LeetCode reverse ll
-    public void reverse(Node head,int left,int right){
-        
-    }
+    
 
     public void removeCycle(){
         // Checking Cycle
@@ -394,8 +391,40 @@ public class LinkedList {
             lH = nextL;
         }
     }
+    // LeetCode reverse ll
+    public Node reverse(Node head,int left,int right){
+        if(left==right || head == null){
+            return head;
+        }
+
+        // left is not head
+        Node tmpL = head;
+        Node tmpR = head;
+        for(int i=1;i<right;i++) {
+            
+            if(i<left){
+                tmpL = tmpL.next;
+            }
+
+            if(i<right){
+                tmpR = tmpR.next;
+            }
+        }
+        
+        return head;
+    }
+    
     public static void main(String[] args) {
-       
+        
+        LinkedList ll = new LinkedList();
+        ll.addFirst(1);
+        ll.addLast(2);
+        ll.addLast(3);
+        ll.addLast(4);
+        ll.addLast(5);
+        // ll.addLast(6);
+        ll.reverse(head,2,4);
+        ll.print();
 
         // LinkedList ll = new LinkedList();
         // ll.addFirst(2);
@@ -425,14 +454,6 @@ public class LinkedList {
         // ll.delNthFromN(3);
         // ll.print();
 
-        LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(3);
-        ll.addLast(4);
-        ll.addLast(5);
-        // ll.addLast(6);
-        ll.print();
 
         // ll.zigZag();
         // ll.print();
