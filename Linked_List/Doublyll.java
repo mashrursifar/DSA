@@ -27,16 +27,32 @@ public class Doublyll {
             return;
         }
 
-        Node tmp = head;
+        newNode.next = head;
+        head.prev = newNode;
         head = newNode;
-        head.next = tmp;
-        
+       
+    }
+
+    public void print(){
+        Node tmp = head;
+
+        while (tmp !=null) {
+            System.out.print(tmp.data+" ");
+            tmp = tmp.next;
+        }
+        System.out.println();
     }
 
     
     public static void main(String[] args) {
         Doublyll dll = new Doublyll();
 
+        dll.addFirst(2);
+        dll.addFirst(1);
+        dll.addFirst(2);
+        dll.addFirst(1);
+        dll.print();
+        System.out.println(size);
         
     }
 }
