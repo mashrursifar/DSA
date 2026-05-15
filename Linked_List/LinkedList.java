@@ -144,11 +144,11 @@ public class LinkedList {
         Node tmp = head;
 
         while (tmp != null) {
-            System.out.print(tmp.data+" ");
+            System.out.print(tmp.data+"->");
             tmp = tmp.next;
             
         }
-        System.out.println();
+        System.out.println("null");
     }
 
     public void reverse(){
@@ -430,8 +430,8 @@ public class LinkedList {
         // ll.addLast(6);
         ll.print();
 
-        ll.zigZag();
-        ll.print();
+        // ll.zigZag();
+        // ll.print();
         
     //     head.next.next.next.next.next = head.next.next;
     //     System.out.println(ll.isCycleExists());
