@@ -400,9 +400,11 @@ public class LinkedList {
         // left is not head
         Node tmpL = head;
         Node tmpR = head;
+        Node prev = null;
         for(int i=1;i<right;i++) {
             
             if(i<left){
+                prev = tmpL;
                 tmpL = tmpL.next;
             }
 
@@ -411,6 +413,19 @@ public class LinkedList {
             }
         }
         
+        
+        Node curr = tmpL;
+       System.out.println(tmpR.data);
+        prev = prev.next;
+        Node next;
+        Node check = tmpR.next;
+        while (curr != check) {
+            System.out.println(curr.data);
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
         return head;
     }
     
@@ -422,8 +437,10 @@ public class LinkedList {
         ll.addLast(3);
         ll.addLast(4);
         ll.addLast(5);
+        ll.addLast(6);
+        ll.addLast(7);
         // ll.addLast(6);
-        ll.reverse(head,2,4);
+        ll.reverse(head,3,6);
         ll.print();
 
         // LinkedList ll = new LinkedList();
