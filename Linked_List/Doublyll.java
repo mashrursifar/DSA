@@ -56,11 +56,27 @@ public class Doublyll {
         }
 
         Node newNode = new Node(data);
+        size++;
 
         tail.next = newNode;
         newNode.prev = tail;
         tail = newNode;
         
+    }
+
+    public void removeLast(){
+        if(head==null){
+            System.out.println("Linked List is empty");
+            return;
+    }else if(head.next == null){
+        head = tail = null;
+        size--;
+        return;
+    }
+
+        tail = tail.prev;
+        tail.next = null;
+        size--;
     }
     public void print(){
         Node tmp = head;
@@ -89,6 +105,10 @@ public class Doublyll {
         // dll.removeFirst();
         // dll.removeFirst();
         // dll.removeFirst();
+        dll.print();
+
+        dll.removeLast();
+        System.out.println(size);
         dll.print();
         
     }
