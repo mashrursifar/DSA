@@ -39,6 +39,7 @@ public class Doublyll {
             return;
         }else if(head.next == null){
             head = tail = null;
+            size--;
             return;
         }
 
@@ -49,14 +50,26 @@ public class Doublyll {
 
     }
 
+    public void addLast(int data){
+        if (head==null) {
+            addFirst(data);
+        }
+
+        Node newNode = new Node(data);
+
+        tail.next = newNode;
+        newNode.prev = tail;
+        tail = newNode;
+        
+    }
     public void print(){
         Node tmp = head;
 
         while (tmp !=null) {
-            System.out.print(tmp.data+" ");
+            System.out.print(tmp.data+"<->");
             tmp = tmp.next;
         }
-        System.out.println();
+        System.out.println("null");
     }
 
     
@@ -70,10 +83,12 @@ public class Doublyll {
         dll.print();
         System.out.println(size);
 
-        dll.removeFirst();
-        dll.removeFirst();
-        dll.removeFirst();
-        dll.removeFirst();
+        dll.addLast(3);
+        dll.addLast(4);
+        // dll.removeFirst();
+        // dll.removeFirst();
+        // dll.removeFirst();
+        // dll.removeFirst();
         dll.print();
         
     }
