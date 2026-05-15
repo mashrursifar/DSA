@@ -33,6 +33,14 @@ public class Doublyll {
        
     }
 
+    public void removeFirst(){
+        if (head == null) {
+            return;
+        }
+
+        
+    }
+
     public void print(){
         Node tmp = head;
 
