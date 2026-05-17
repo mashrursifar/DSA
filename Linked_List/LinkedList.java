@@ -6,7 +6,7 @@ public class LinkedList {
     public static Node tail;
     public static int size;
 
-    public  class Node {
+    public  static class Node {
         
         int data;
         Node next;
@@ -391,6 +391,7 @@ public class LinkedList {
             lH = nextL;
         }
     }
+
     // LeetCode reverse ll
     public Node reverse(Node head,int left,int right){
         if(left==right || head == null){
@@ -413,19 +414,20 @@ public class LinkedList {
             }
         }
         
-        
+        // System.out.println(tmpL.data+" "+tmpR.data);
+        prev.next = tmpR;
         Node curr = tmpL;
-       System.out.println(tmpR.data);
-        prev = prev.next;
         Node next;
-        Node check = tmpR.next;
-        while (curr != check) {
-            System.out.println(curr.data);
+        prev = tmpR.next;
+        while (curr != tmpR) {
+           System.out.println("prev = "+prev.data);
             next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
         }
+        System.out.println("FInal= "+prev.data);
+
         return head;
     }
     
