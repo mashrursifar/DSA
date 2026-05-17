@@ -413,11 +413,17 @@ public class LinkedList {
                 tmpR = tmpR.next;
             }
         }
+
+        
         
         // System.out.println(tmpL.data+" "+tmpR.data);
         Node tmp = tmpR.next;
-       
-        prev.next = tmpR;
+        if(prev == null){
+            head = tmpR;
+            System.out.println(head.data);
+        }else{
+            prev.next = tmpR;
+        }
         Node curr = tmpL;
         Node next;
         prev = tmpR.next;
@@ -444,7 +450,7 @@ public class LinkedList {
         ll.addLast(6);
         ll.addLast(7);
         // ll.addLast(6);
-        ll.reverse(head,2,7);
+        head = ll.reverse(head,2,5);
         ll.print();
 
         // LinkedList ll = new LinkedList();
