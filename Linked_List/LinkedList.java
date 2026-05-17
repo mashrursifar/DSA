@@ -416,18 +416,19 @@ public class LinkedList {
         
         // System.out.println(tmpL.data+" "+tmpR.data);
         Node tmp = tmpR.next;
+       
         prev.next = tmpR;
         Node curr = tmpL;
         Node next;
         prev = tmpR.next;
         while (curr != tmp) {
-           System.out.println("prev = "+prev.data);
+        //    System.out.println("prev = "+prev.data);
             next = curr.next;
             curr.next = prev;
             prev = curr;
             curr = next;
         }
-        System.out.println("FInal= "+curr.data);
+        // System.out.println("FInal= "+curr.data);
 
         return head;
     }
@@ -443,7 +444,7 @@ public class LinkedList {
         ll.addLast(6);
         ll.addLast(7);
         // ll.addLast(6);
-        ll.reverse(head,3,7);
+        ll.reverse(head,2,7);
         ll.print();
 
         // LinkedList ll = new LinkedList();
