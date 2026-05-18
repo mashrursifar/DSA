@@ -2,9 +2,9 @@ package Linked_List;
 
 public class LinkedList {
 
-    public static Node head;
-    public static Node tail;
-    public static int size;
+    public  Node head;
+    public  Node tail;
+    public  int size;
 
     public  static class Node {
         
@@ -439,56 +439,74 @@ public class LinkedList {
         return head;
     }
     
+    // Add two numbers leetcode
+    public static void solution(Node l1, Node l2){
+        int sizel1 =0, sizel2 =0;
+        int left = 0,right = 0;
+        Node tmp = l1;
+        while (tmp != null) {
+            sizel1++;
+            left = left*10 + tmp.data;
+            tmp = tmp.next;
+        }
+        System.out.println(left);
+
+        tmp = l2;
+        while (tmp != null) {
+            sizel2++;
+            right = right*10 + tmp.data;
+            tmp = tmp.next;
+        }
+        System.out.println(right);
+        int n=0,num = 0;
+        while (left !=0) {
+            int x = left%10;
+            left = left/10;
+            num = num*10 + x;
+        }
+        System.out.println(num);
+
+        
+        while (right !=0) {
+            int x = right%10;
+            right = right/10;
+            n = n*10 + x;
+        }
+        System.out.println(n);
+        num = num+n;
+        System.out.println(num);
+        
+        if (sizel1<sizel2) {
+            tmp = l2;
+        }else{
+            tmp = l1;
+        }
+        while (tmp != null) {
+            tmp.data = num%10;
+            num = num/10;
+            tmp = tmp.next;
+        }
+    }
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
-        ll.addFirst(1);
-        ll.addLast(2);
-        ll.addLast(3);
+        ll.addFirst(2);
+      
         ll.addLast(4);
-        ll.addLast(5);
-        ll.addLast(6);
-        ll.addLast(7);
-        // ll.addLast(6);
-        head = ll.reverse(head,2,5);
+        ll.addLast(3);
+       
         ll.print();
 
-        // LinkedList ll = new LinkedList();
-        // ll.addFirst(2);
-        // ll.addFirst(1);
-        // ll.addLast(3);
-        // // ll.addLast(4);
-        // ll.addLast(3);
-        // ll.addLast(2);
-        // ll.addLast(1);
-
-        // ll.print();
-        // System.out.println(ll.checkPalindrome());
-        // ll.print();
-
-        // ll.add(2, 11);
-        // ll.print();
-        // ll.removeFirst();
-        // ll.print();
-        // ll.removeLast();
-        // ll.print();
-        // ll.add(2, 11);
-        // ll.print();
-        // System.out.println(size);
-        // System.out.println(ll.recSearch(11));
-        // ll.reverse();
-        // ll.print();
-        // ll.delNthFromN(3);
-        // ll.print();
-
-
-        // ll.zigZag();
-        // ll.print();
-        
-    //     head.next.next.next.next.next = head.next.next;
-    //     System.out.println(ll.isCycleExists());
-    //     ll.removeCycle();
-    //     System.out.println(ll.isCycleExists());
-    //     ll.print();
+        LinkedList nn = new LinkedList();
+        nn.addFirst(5);
+      
+        nn.addLast(6);
+        nn.addLast(4);
+        nn.print();
+        Node l1 = ll.head;
+        Node l2 = nn.head;
+        solution(l1,l2);
+        nn.print();
+        ll.print();
     }
 } 
