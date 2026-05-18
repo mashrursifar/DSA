@@ -440,68 +440,58 @@ public class LinkedList {
     }
     
     // Add two numbers leetcode
-    public static void solution(Node l1, Node l2){
-        int sizel1 =0, sizel2 =0;
-        int left = 0,right = 0;
-        Node tmp = l1;
-        while (tmp != null) {
-            sizel1++;
-            left = left*10 + tmp.data;
-            tmp = tmp.next;
-        }
-        System.out.println(left);
+    public static Node solution(Node l1, Node l2){
+        Node tmp = new Node(-1);
+        Node res = tmp;
 
-        tmp = l2;
-        while (tmp != null) {
-            sizel2++;
-            right = right*10 + tmp.data;
-            tmp = tmp.next;
-        }
-        System.out.println(right);
-        int n=0,num = 0;
-        while (left !=0) {
-            int x = left%10;
-            left = left/10;
-            num = num*10 + x;
-        }
-        System.out.println(num);
+       int total =0, carry = 0;
 
-        
-        while (right !=0) {
-            int x = right%10;
-            right = right/10;
-            n = n*10 + x;
+       while(l1 !=null || l2 != null || carry != 0){
+
+        total = carry;
+
+        if(l1 != null){
+            total += l1.data;
+            l1 = l1.next;
         }
-        System.out.println(n);
-        num = num+n;
-        System.out.println(num);
-        
-        if (sizel1<sizel2) {
-            tmp = l2;
-        }else{
-            tmp = l1;
+
+        if(l2 != null){
+            total += l2.data;
+            l2 = l2.next;
         }
-        while (tmp != null) {
-            tmp.data = num%10;
-            num = num/10;
-            tmp = tmp.next;
-        }
+
+        int num = total % 10;
+        carry = total /10;
+        tmp.next = new Node(num);
+        tmp = tmp.next;
+       }
+       return res.next;
+       
+     
     }
     public static void main(String[] args) {
         
         LinkedList ll = new LinkedList();
-        ll.addFirst(2);
+        ll.addFirst(9);
       
-        ll.addLast(4);
-        ll.addLast(3);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        ll.addLast(9);
+        
        
         ll.print();
 
         LinkedList nn = new LinkedList();
-        nn.addFirst(5);
+        nn.addFirst(9);
       
-        nn.addLast(6);
-        nn.addLast(4);
+        nn.addLast(9);
+        nn.addLast(9);
+        nn.addLast(9);
         nn.print();
         Node l1 = ll.head;
         Node l2 = nn.head;
