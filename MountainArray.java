@@ -18,7 +18,7 @@ public class MountainArray {
             }
             
         }
-        return l;
+        return 0;
     }
     public static void main(String[] args) {
         int arr[] = {0,1,2,3,3,4,6,10,5,2};
