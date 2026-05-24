@@ -15,6 +15,7 @@ public class Stack {
     }
     // Pop
     public  int pop(){
+        if(isEmpty()) return -1;
 
         int top = list.get(list.size()-1);
         list.remove(list.size()-1);
@@ -22,7 +23,9 @@ public class Stack {
     }
     // peek
     public  int peek(){
-        return list.get(list.size()-1);
+                if(isEmpty()) return -1;
+
+                return list.get(list.size()-1);
     }
 
     public static void main(String[] args) {
@@ -32,7 +35,7 @@ public class Stack {
         s.push(3);
         s.push(4);
 
-        while (!s.isEmpty()) {
+        while (!isEmpty()) {
             System.out.println(s.peek());
             s.pop();
         }
