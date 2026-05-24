@@ -1,7 +1,7 @@
 package Stack_;
 
 import java.util.*;
-public class Stack {
+public class StackBuild {
     static ArrayList<Integer> list = new ArrayList<>();
 
     // check empty
@@ -29,7 +29,7 @@ public class Stack {
     }
 
     public static void main(String[] args) {
-        Stack s = new Stack();
+        StackBuild s = new StackBuild();
         s.push(1);
         s.push(2);
         s.push(3);
