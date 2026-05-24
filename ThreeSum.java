@@ -30,9 +30,8 @@ public class ThreeSum {
         System.out.println();
         int j,k;
         for(int i=0; i<n-2; i++){
-            while (arr[i]==arr[i+1]) {
-                i++;
-            }
+            if(i>0 && arr[i]==arr[i-1]) continue;
+
             j=i+1;
             k= n-1;
 
@@ -43,14 +42,12 @@ public class ThreeSum {
                         l.add(arr[j]);
                         l.add(arr[k]);
                         list.add(l);
-                        System.out.println(arr[j]+" prev "+arr[j+1]);
-                        // while (arr[k]==arr[k-1]) {
-                        //     k--;
-                        // }
+                        
+                       
+                        while (j<k && arr[j]==arr[j+1]) {
+                        j++;
+                        }
                         k--;
-                        // while (j<k && arr[j]==arr[j+1]) {
-                        // j++;
-                        // }
                 }else if((arr[i]+arr[j]+arr[k])>0){
                     k--;
                 }else{
@@ -59,12 +56,13 @@ public class ThreeSum {
                 }
                 
             }
+           
         }
         return list;
     }
     public static void main(String[] args) {
        
-        int arr[] = {-1,0,1,2,-1,-4};
+        int arr[] = {0,0,0,0};
 
         System.out.println(threeSum(arr));
     }
