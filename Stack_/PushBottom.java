@@ -13,6 +13,15 @@ public class PushBottom {
         s.push(top);
 
     }
+    public static void reverseStack(Stack<Integer> s){
+        if (s.isEmpty()) {
+            return;
+        }
+
+        int top = s.pop();
+        reverseStack(s);
+        pushAtBottom(s, top);
+    }
     public static void main(String[] args) {
         Stack<Integer> s = new Stack<>();
         s.push(1);
@@ -21,7 +30,7 @@ public class PushBottom {
         s.push(4);
 
         pushAtBottom(s,5);
-        
+        reverseStack(s);
         while (!s.isEmpty()) {
             System.out.println(s.pop());
             // s.pop();
