@@ -10,7 +10,7 @@ public class NextGreaterElement {
         for(int i=n; i>=0; i--){
             // 
             while (!s.isEmpty()) {
-                if (arr[s.peek()] < arr[i]) {
+                if (arr[s.peek()] <= arr[i]) {
                     s.pop();
                 }else{
                     break;
