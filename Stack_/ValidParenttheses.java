@@ -10,28 +10,33 @@ public class ValidParenttheses {
         s.push(cur);
 
         if (cur == '(' || cur == '{' || cur == '[') {
+
             for(int i=1; i<str.length(); i++){
                 cur = str.charAt(i);
                 if (cur == '(' || cur == '{' || cur == '[') {
                     s.push(cur);
-                    
                 }else{
+                    if (s.isEmpty()) {
+                        return false;
+                    }
+                    
+                    char top = s.peek();
                     if (cur == ')') {
-                        char top = s.peek();
+                        
                         if (top == '(') {
                             s.pop();
                         }else{
                             return false;
                         }
-                    }else if(s.peek() == '}'){
-                        char top = s.peek();
+                    }else if(cur == '}'){
+                        
                         if (top == '{') {
                             s.pop();
                         }else{
                             return false;
                         }
                     }else{
-                        char top = s.peek();
+                        
                         if (top == '[') {
                             s.pop();
                         }else{
@@ -53,7 +58,7 @@ public class ValidParenttheses {
     }
 
     public static void main(String[] args) {
-        String str = "({})[]";
+        String str = "{{{(())}}{[[]]}}()";
 
         System.out.println(checkParentheses(str));
     }
