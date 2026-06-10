@@ -7,7 +7,7 @@ public class FirstNonRepetingChar {
     public static void findNonRepeting(String str){
         Queue<Character> q = new LinkedList<>();
         int freq[] = new int[26];
-        String s = "";
+        StringBuilder s = new StringBuilder();
 
         for(int i=0; i<str.length(); i++){
             char ch = str.charAt(i);
@@ -16,14 +16,14 @@ public class FirstNonRepetingChar {
 
             while (!q.isEmpty()) {
                 if (freq[q.peek()-'a']==1) {
-                    s += " "+q.peek();
+                    s.append(" "+q.peek());
                     break;
                 }else{
                     q.remove();
                 }
             }
             if (q.isEmpty()) {
-                s += " -1";   
+                s.append(" -1");   
             }
 
 
