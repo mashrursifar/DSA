@@ -47,17 +47,29 @@ public class Activity {
 
         // 1st time 
         int mAct = 1;
-        int endTime = arr[0][1];
-        for(int i=0; i<start.length; i++){
+        int endTime = arr[0][2];
+        l.add(arr[0][0]);
+        for(int i=1; i<start.length; i++){
 
-            System.out.println(arr[i][0]+" "+arr[i][1]+" "+arr[i][2]);
+            if (arr[i][1]>=endTime) {
+                mAct++;
+                l.add(i);
+                endTime = arr[i][2];
+            }
         }
+
+        System.out.println(mAct);
+        for(int i=0; i<l.size(); i++){
+            System.out.print("A"+l.get(i)+" ");
+        }
+        System.out.println();
     }
     public static void main(String[] args) {
         int start[] = {1, 3, 0, 5, 8, 5};
         int end[] = {2, 4, 6, 7, 9, 9};
 
         actFind(start, end);
+        activityFind(start, end);
     }
     
 }
