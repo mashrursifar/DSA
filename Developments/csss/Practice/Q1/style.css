@@ -1,3 +1,8 @@
 *{
     color: rebeccapurple;
 }
+
+.upvote{
+    color: red;
+    background-color: green;
+}
