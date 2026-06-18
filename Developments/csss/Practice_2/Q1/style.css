@@ -1,0 +1,39 @@
+
+
+h1{
+    /* border-width: 5px; */
+    
+    border-style: solid;
+    border-color: pink;
+}
+
+#traffic{
+
+    
+    height: 200px;
+    width: 75px;
+    
+    border: 2px solid rebeccapurple;
+
+    
+
+}
+
+.x{
+    
+    border: 2px solid black;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+#yellow{
+    background-color: yellow;
+}
+#red{
+    background-color: red;
+}
+#green{
+    background-color: green;
+}
