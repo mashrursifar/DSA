@@ -1,0 +1,30 @@
+#circle{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    background-color: rgb(248, 215, 5);
+}
+
+#mouth{
+    height: 50px;
+    width: 100px;
+    background-color: rgb(140, 26, 26);
+    border-radius: 0 0 30px 30px;
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 100px;
+    
+
+}
+
+.eye{
+    height: 30px;
+    width: 30px;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    margin: 40px;
+    margin-top: 60px;
+    margin-left: 65px;
+}
