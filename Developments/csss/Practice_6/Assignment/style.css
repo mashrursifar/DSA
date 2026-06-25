@@ -65,3 +65,25 @@
         grid-column: 4/span 9;
     }
 }
+
+#ld{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    /* background-color: goldenrod; */
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid goldenrod;
+    animation: spin 2s linear infinite;
+    
+    /* border-right-width: 0px; */
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
