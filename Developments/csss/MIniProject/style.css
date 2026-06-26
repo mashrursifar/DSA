@@ -1,7 +1,52 @@
 *{
     margin: 0px;
     padding: 0px;
-    background: url("photo.jpg");
-    background-size: cover;
+    
+}
+.main_box input{
+    position: absolute;
+    left: -200px;
 }
 
+.main_box{
+    background: url("photo.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+.sidebar_menu{
+    position: fixed;
+    top: 0px;
+    border: 2px solid black;
+    width: 200px;
+    height: 100vh;
+    box-shadow: 5px 5px 5px black;
+    font-size: 24px;
+}
+
+.logo a{
+    color: whitesmoke;
+    text-decoration: none;
+    position: absolute;
+    left: 30px;
+    
+}
+
+.menu a,i{
+    color: antiquewhite;
+    text-decoration: none;
+    position: relative;
+    top: 30px;
+}
+
+.menu li{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.social_media a{
+    position: relative;
+    top: 230px;
+    color: black;
+}
