@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: black;
+    color: #fff;
+}
+.main{
+
+    display: flex;
+    height: 100vh;
+    margin: 0;
+    
+}
+.side-bar{
+    background-color: burlywood;
+    width: 300px;
+    border-radius: 1rem; /*1 rem = 16px*/
+    margin: 5px;
+}
+
+.main-content{
+    background-color: rgb(67, 10, 10);
+    flex: 1;  /*It will take remaining all the spaces in the width */
+    border-radius: 1rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    
+}
+
+
+
+.music-player{
+    background-color: rgb(5, 99, 85);
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 72px;
+    margin-left: 5px;
+    
+    
+   
+}
