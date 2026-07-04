@@ -6,8 +6,9 @@
 }
 
 body{
+    font-family: "Montserrat", sans-serif;
     background-color: black;
-    color: #fff;
+    color: #efefef;
 }
 .main{
 
@@ -17,31 +18,68 @@ body{
     
 }
 .side-bar{
-    background-color: burlywood;
+    background-color: #121212;
     width: 300px;
     border-radius: 1rem; /*1 rem = 16px*/
     margin: 5px;
 }
+.lib{
+    position: relative;
+}
+.side-bar .upper{
+    background-color: #1f1f1f;
+    /* height: 100px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 1rem;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.upper .btn{
+    color: black;
+    border-radius: 25px ;
+    position: relative;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.side-bar .bottom{
+    background-color: #1f1f1f;
+    border-radius: 25px;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+.bottom .btn{
+    color: black;
+    border-radius: 25px;
+    position: relative;
+    left: 20px;
+    font-size: 20px ;
+    font-weight: 600;
+}
 
 .main-content{
-    background-color: rgb(67, 10, 10);
+    background-color: #121212;
     flex: 1;  /*It will take remaining all the spaces in the width */
     border-radius: 1rem;
     overflow-y: auto;
     scrollbar-width: thin;
-    
+    margin-right: 5px;
 }
 
 
 
 .music-player{
-    background-color: rgb(5, 99, 85);
+    background-color: black;
     position: fixed;
     bottom: 0px;
     right: 0px;
     left: 0px;
     height: 72px;
     margin-left: 5px;
+    margin-right: 5px;
     
     
    
