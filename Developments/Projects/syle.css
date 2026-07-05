@@ -1,149 +1,314 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-}
+        body {
+            font-family: "Montserrat", sans-serif;
+            background-color: black;
+            color: #efefef;
+        }
 
-body{
-    font-family: "Montserrat", sans-serif;
-    background-color: black;
-    color: #efefef;
-}
-.main{
+        .main {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding-bottom: 80px; /* Prevents content from hiding behind the music player */
+        }
 
-    display: flex;
-    height: 100vh;
-    margin: 0;
-    
-}
-.side-bar{
-    background-color: #121212;
-    width: 300px;
-    border-radius: 1rem; /*1 rem = 16px*/
-    margin: 5px;
-}
-.lib{
-    position: relative;
-}
-.side-bar .upper{
-    margin-top: 20px;
-    margin-bottom: 20px;
+        /* --- Sidebar Styles --- */
+        .side-bar {
+            width: 300px;
+            border-radius: 1rem;
+            margin: 5px;
+            display: flex;
+            flex-direction: column; /* Stacks .nav and .upper vertically */
+        }
 
-}
+        .side-bar .upper {
+            background-color: #121212;
+            border-radius: .5rem;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            flex: 1; /* Takes up remaining vertical space */
+            overflow-y: auto; /* Adds scrollbar if content overflows */
+            padding: 1rem;
+        }
 
-.side-bar .library{
-    background-color: #1f1f1f;
-    height: 1rem;
-    display: flex;
-    height: 3rem;
-    border-radius: 1rem;
-    padding: 1rem 0;
-    font-weight: 300;
+        /* Fixes the layout to push icons to the right */
+        .library {
+            display: flex;
+            justify-content: space-between; /* Pushes options left, icons right */
+            align-items: center;            /* Vertically centers them */
+            padding-bottom: 1rem;
+        }
 
-}
+        .options {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* Space between icon and text */
+        }
 
-.playlist .btn{
-    color: black;
-    border-radius: 0.75rem ;
-    position: relative;
-    left: 20px;
-    font-size: 1.25rem;
-    font-weight: 400;
-    padding: 5px;
-}
-.side-bar .playlist{
-    background-color: #1f1f1f;
-    border-radius: 1rem;
-    padding: 1rem;
-    margin-top: 1rem;
-}
+        .upper img {
+            height: 1rem;
+            width: 1rem;
+            opacity: .7;
+        }
 
-.side-bar .podcasts{
-    background-color: #1f1f1f;
-    border-radius: 1rem;
-    padding: 1rem;
-    padding-bottom: 20px;
-    margin-top: 1rem;
-}
-.podcasts .btn{
-    /* color: black; */
-    border-radius: 0.75rem;
-    position: relative;
-    left: 20px;
-    font-size: 1.25rem ;
-    font-weight: 400;
-    padding: 5px;
-}
+        .upper img:hover {
+            opacity: 1;
+        }
 
-.main-content{
-    background-color: #121212;
-    flex: 1;  /*It will take remaining all the spaces in the width */
-    border-radius: 1rem;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    margin-right: 5px;
-}
+        .icons {
+            display: flex;
+            gap: 1rem;
+        }
 
+        .icons i {
+            opacity: 0.5;
+            cursor: pointer;
+            font-size: 1.2rem;
+            
+        }
 
+        .icons i:hover {
+            opacity: 1; /* Your hover effect works perfectly! */
+        }
 
-.music-player{
-    background-color: black;
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    height: 72px;
-    margin-left: 5px;
-    margin-right: 5px;
-    
-    
-   
-}
+        /* --- Playlist and Podcasts Sections --- */
+        .side-bar .playlist,
+        .side-bar .podcasts {
+            background-color: #1f1f1f;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
 
-.upper img{
+        .side-bar .playlist h5,
+        .side-bar .podcasts h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
 
-    height: 1rem;
-    width: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    opacity: .5;
-    
+        .side-bar .playlist p,
+        .side-bar .podcasts p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
 
-}
+        /* Fixes button positioning (removed the relative positioning hack) */
+        .playlist .btn,
+        .podcasts .btn {
+            color: black;
+            border-radius: 2rem; /* Pill-shaped like Spotify */
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 20px;
+            margin-top: 10px;
+        }
 
-.nav{
-    background-color: #1f1f1f;
-    border-radius: 1rem;
-    padding-left: 10px;
-    height: 4rem;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+        .playlist .btn:hover,
+        .podcasts .btn:hover {
+            background-color: #d9d9d9;
+        }
 
-    
-}
+        /* --- Navigation --- */
+        .nav {
+            background-color: #121212;
+            border-radius: .5rem;
+            padding: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            
+        }
 
-.nav a{
-    color: #efefef;
-    opacity: .5;
-    text-decoration: none;
-}
+        .nav a{
+            display: flex;
+            gap: 1rem;
+        }
 
-.nav a:hover{
-    opacity: 1;
-}
+        .nav a {
+            color: #efefef;
+            opacity: .7;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.upper a{
-    color: #efefef;
-    opacity: .5;
-    text-decoration: none;
-}
+        .nav a:hover {
+            opacity: 1;
+        }
+        
+        .upper a {
+            color: #efefef;
+            opacity: .7;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.upper a:hover{
-    opacity: 1;
-}
-.upper img:hover{
-    opacity: 1;
-}
+        .upper a:hover {
+            opacity: 1;
+        }
 
+        #plus{
+            color: #efefef;
+            opacity: .7;
+        }
+        #plus:hover{
+            opacity: 1;
+        }
+
+        #arr{
+            color: #efefef;
+            opacity: .7;
+        }
+        #arr:hover{
+            opacity: 1;
+        }
+
+        /* --- Main Content --- */
+        .main-content {
+            background-color: #121212;
+            flex: 1;
+            border-radius: 1rem;
+            overflow-y: auto;
+            margin: 5px;
+            margin-bottom: 10px; /* Space for music player */
+            
+        }
+
+        .sticky-nav{
+            
+            position: sticky;
+            top: 0px;
+            background-color: #121212;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: .5rem;
+            z-index: 5;
+        }
+
+        .sticky-nav .dwn{
+            background-color: black;
+            color: #efefef;
+            
+        }
+        
+
+        .sticky-nav button{
+            color: black;
+            height: 2.25rem;
+            border-radius: .6rem;
+            border: none;
+        }
+
+        .sticky-nav-options{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: .5rem;
+        }
+
+        .badge{
+            margin-right: 1rem;
+        }
+
+        .sticky-nav-icons{
+            margin-left: .5rem;
+        }
+
+        @media (max-width: 1000px) {
+            .hide{
+                display: none;
+            }
+        }
+        
+        .album{
+            margin-left: .5rem;
+        }
+
+        .album .card{
+            display: flex;
+            background-color: #1f1f1f;
+            
+            height: 15rem;
+            width: 12rem;
+            padding: .5rem;
+
+        }
+        .card p{
+            color: #efefef;
+            opacity: .7;
+            font-size: 0.75rem;
+        }
+
+        .card h6{
+            margin-top: .5rem;
+            color: #efefef;
+
+        }
+
+        .main-content .card img{
+            
+            height: 7rem;
+            width: 7rem;
+            align-self: center;
+        }
+
+        .card-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-top: .5rem;
+            row-gap: .5rem;
+        }
+
+        .main-content .footer{
+            height: 20rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .footer .line{
+            border-top: #efefef solid 2px;
+            opacity: .6;
+            width: 90%;
+            height: 30%;
+        }
+        /* --- Music Player --- */
+        .music-player {
+            background-color: #181818;
+            position: fixed;
+            bottom: 0px;
+            left: 5px;   /* Fixed the width bug by using left/right instead of margins */
+            right: 5px;
+            height: 72px;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            z-index: 100;
+        }
+
+        /* Custom Scrollbar (Optional but looks nice) */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #282828;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3e3e3e;
+        }
