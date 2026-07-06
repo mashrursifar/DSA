@@ -327,13 +327,23 @@
 
         .player img{
             margin-left: .5rem;
-            height: 1rem;
+            height: .75rem;
         }
 
-        .cur-time{
-            appearance: none;
-            width: 90%;
+
+        .slide .cur-time{
+            /* appearance: none; */
+            width: 20rem;
         }
+
+        #pause-btn {
+            height: 2rem; /* Change this to your desired specific height */
+            width: auto;
+        } 
+
+        
+
+        
 
         .controls{
             display: flex;
@@ -343,6 +353,16 @@
             width: 25%;
     
 
+        }
+
+        .controls .fa-solid{
+            height: .75 rem;
+            width: .75 rem;
+            background-color: red;
+        }
+
+        .controls input{
+            width: 4.5rem;
         }
         
         /* Custom Scrollbar (Optional but looks nice) */
