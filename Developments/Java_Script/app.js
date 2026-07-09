@@ -105,3 +105,9 @@ function genRand(start, end){
     let rand = Math.floor((Math.random()*(end-start)))+start;
     return rand;
 }
+
+
+// Arrow function
+const sum = (a,b) => {
+    console.log(a+b);
+};
