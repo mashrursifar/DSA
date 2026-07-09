@@ -23,28 +23,56 @@
 // }
 
 
-let movie = prompt("Guess my favourite movie name: ");;
+// let movie = prompt("Guess my favourite movie name: ");;
 
 
-while ((movie != "john wick") && (movie !="quit")) {
-    movie= prompt("Wrong guess/n guess my favourite movie: ");
+// while ((movie != "john wick") && (movie !="quit")) {
+//     movie= prompt("Wrong guess/n guess my favourite movie: ");
 
-}
+// }
 
-if(movie == "john wick"){
-        console.log("Correct guess");
+// if(movie == "john wick"){
+//         console.log("Correct guess");
 
+//     }
+
+
+// let num = 2;
+// let arr=[1,2,3,4,5,6,2,3];
+
+// for(let i=0; i<arr.length; i++){
+//     if(arr[i]==num){
+//         arr.splice(i,1);
+//     }
+// }
+// for(let i=0; i<arr.length; i++){
+//     console.log(arr[i]);
+// }
+
+// let student = {
+//     name: "Sifar",
+//     id: 1291,
+//     semester: "9th"
+// };
+
+// console.log(student);
+
+
+// function avg3( a,b, c){
+//     let avg = (a+b+c)/3;
+//     console.log(avg);
+// }
+
+
+let str= "abcdabcdefgggh";
+let ans = "";
+
+for(let i=0; i<str.length; i++){
+    let cur = str[i];
+
+    if(ans.indexOf(cur) == -1){
+        ans += cur;
     }
-
-
-let num = 2;
-let arr=[1,2,3,4,5,6,2,3];
-
-for(let i=0; i<arr.length; i++){
-    if(arr[i]==num){
-        arr.splice(i,1);
-    }
 }
-for(let i=0; i<arr.length; i++){
-    console.log(arr[i]);
-}
+
+console.log(ans)
