@@ -76,3 +76,32 @@ for(let i=0; i<str.length; i++){
 }
 
 console.log(ans)
+
+
+// Q3
+
+// let n = prompt("Number of counties: ");
+
+// let arr = [];
+
+// for(let i=0; i<n; i++){
+//     let str = prompt();
+//     arr.push(str);
+// }
+
+// let maxStr = arr[0];
+// let max = arr[0].length;
+
+// for(let i=1; i<n; i++){
+//     if(max<arr[i].length){
+//         maxStr = arr[i];
+//         max = arr[i].length;
+//     }
+// }
+
+// console.log(maxStr);
+
+function genRand(start, end){
+    let rand = Math.floor((Math.random()*(end-start)))+start;
+    return rand;
+}
