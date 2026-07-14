@@ -111,3 +111,55 @@ function genRand(start, end){
 const sum = (a,b) => {
     console.log(a+b);
 };
+
+
+// this case
+
+const student = {
+    name : "Sifar",
+    marks: 95,
+    prop: this, //global scope
+    getName: function () {
+        console.log(this);
+        return this.name; //student obj
+    },
+    getMarks: ()=> {
+        console.log(this); // parent's socpe -> window
+        return this.marks;  
+    },
+    getInfo1: function(){
+        setTimeout(()=>{
+            console.log(this); //student
+        },2000);
+    },
+    getInfo2: function(){
+        setTimeout(function(){
+            console.log(this); //window
+        },2000);
+    }
+};
+
+// Arrow function for square of n
+// const pow  = (a)=>(
+//     a**2
+// );
+
+// let id = setInterval(()=>{
+//     console.log("Hello world!!");
+// },2000);
+
+// setTimeout(() => {
+//     console.log("Clear Interval ran");
+//     clearInterval(id);
+// }, 10000);
+
+
+const obje = {
+    message: "Hello",
+
+    logMes:function(){
+        console.log(this);
+    }
+};
+
+setTimeout(obje.logMes, 1000);
