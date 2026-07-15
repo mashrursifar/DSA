@@ -154,12 +154,27 @@ const student = {
 // }, 10000);
 
 
-const obje = {
-    message: "Hello",
+// const obje = {
+//     message: "Hello",
 
-    logMes:function(){
-        console.log(this);
+//     logMes:function(){
+//         console.log(this);
+//     }
+// };
+
+// setTimeout(obje.logMes, 1000);
+
+
+let arr  =[101,100,1000,100,50];
+
+console.log(arr.every((el)=> el %10 == 0));
+
+let min = arr.reduce((min,el)=>{
+    if(el<min){
+        return el;
+    }else{
+        return min;
     }
-};
+})
 
-setTimeout(obje.logMes, 1000);
+console.log(min);
