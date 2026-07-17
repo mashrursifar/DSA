@@ -1,14 +1,18 @@
 
-
+.gn{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   row-gap: 1rem;
+}
 .btn{
     display: block;
-    color: white;
-    background-color: red;
+    width: 5rem;
+
 }
 
 .inp{
-    color: #5b1414;
-    background-color: red;
-    width: 12rem;
-    height: 12rem;
+    color: #5b1414;  
+    width: 25rem;
+    height: 10rem;
 }
