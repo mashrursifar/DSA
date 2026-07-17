@@ -165,16 +165,53 @@ const student = {
 // setTimeout(obje.logMes, 1000);
 
 
-let arr  =[101,100,1000,100,50];
+// let arr  =[101,100,1000,100,50];
 
-console.log(arr.every((el)=> el %10 == 0));
+// console.log(arr.every((el)=> el %10 == 0));
 
-let min = arr.reduce((min,el)=>{
-    if(el<min){
-        return el;
-    }else{
-        return min;
-    }
-})
+// let min = arr.reduce((min,el)=>{
+//     if(el<min){
+//         return el;
+//     }else{
+//         return min;
+//     }
+// })
 
-console.log(min);
+// console.log(min);
+
+
+let arr = [2,4,2,4,3];
+
+let sums = arr.reduce((acc,el)=>(acc+el**2),0);
+console.log(sums);
+
+let nArr = arr.map((el)=>(el+5));
+console.log(nArr);
+
+function doubleAndReturnArgs(a, ...args){
+   
+    return [...a,...args.map((v) => (v*2))];
+}
+
+console.log(doubleAndReturnArgs(arr,3,4,5,2,4,6));
+
+
+let strs = ["sifar", 'mashrur', 'boby'];
+
+console.log(strs.map((str) => str.toUpperCase()));
+
+const mergeObjects = (a,b) =>(
+
+    {...a,...b}
+)
+
+let x = {
+    ids: 1,
+    names: 'mas',
+};
+
+let y = {
+    id: 2,
+    name: 'mas',
+};
+console.log(mergeObjects(x,y));
