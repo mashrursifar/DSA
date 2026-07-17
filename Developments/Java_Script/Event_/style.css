@@ -1,0 +1,14 @@
+
+
+.btn{
+    display: block;
+    color: white;
+    background-color: red;
+}
+
+.inp{
+    color: #5b1414;
+    background-color: red;
+    width: 12rem;
+    height: 12rem;
+}
