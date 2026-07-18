@@ -61,7 +61,11 @@ function check(idx){
     }
     else{
         let h3 = document.querySelector("h3");
-        h3.innerText = `Game over!! Press any key to start again`;
+        h3.innerHTML = `Game over!! <b>Your Score is ${level}</b><br>Press any key to start again`;
+        document.querySelector("body").style.backgroundColor= "red";
+        setTimeout(function(){
+            document.querySelector("body").style.backgroundColor= "white";
+        },200);
         reset();
     }
 }
