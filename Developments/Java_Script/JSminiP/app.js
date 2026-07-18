@@ -8,16 +8,17 @@ let start = false;
 
 document.addEventListener("keypress", function(){
     if(start == false){
-        let h3 = document.querySelector("h3");
-        h3.innerText = `level ${level}`;
+        
         start = true;
+        levelUp();
     }
 
-    let randIndx = Math.floor(Math.random()*4);
-    let selectColor = color[randIndx];
-    console.log(selectColor);
+    
     
     function flash(){
+        let randIndx = Math.floor(Math.random()*4);
+        let selectColor = color[randIndx];
+        console.log(selectColor);
         let change = document.querySelector(`.${selectColor}`)
         change.classList.add("flash");
         setTimeout(function(){
@@ -25,6 +26,21 @@ document.addEventListener("keypress", function(){
         },300);
     }
 
-    flash()
+    function levelUp(){
+        level++;
+        let h3 = document.querySelector("h3");
+        h3.innerText = `level ${level}`;
+
+        flash()
+    }
+
+    let options = document.querySelectorAll(".box");
+
+    for(option of options){
+        option.addEventListener("click", function () {
+            console.log(this);
+        })
+    }
+
 
 })
