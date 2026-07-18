@@ -36,10 +36,16 @@ document.addEventListener("keypress", function(){
 
     let options = document.querySelectorAll(".box");
 
-    for(option of options){
-        option.addEventListener("click", function () {
+    function buttonPress(){
+            this.classList.add("userflash");
             console.log(this);
-        })
+            setTimeout(() => {
+                this.classList.remove("userflash");
+            }, 300);
+            
+        }
+    for(option of options){
+        option.addEventListener("click", buttonPress);
     }
 
 
