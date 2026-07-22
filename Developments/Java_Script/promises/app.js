@@ -143,7 +143,7 @@ async function fetchAPI() {
 async function getFromAxios() {
   try {
     let res = await axios.get(url);
-    console.log(res.data.fact);
+
     return res.data.fact;
   } catch (error) {
     console.log(error);
@@ -158,3 +158,30 @@ btn.addEventListener("click", async () => {
   let p = document.querySelector("p");
   p.innerText = data;
 });
+
+let url2 = "http://universities.hipolabs.com/search?name=";
+let country = "bangladesh";
+async function getUniversites(country) {
+  let res = await axios.get(url2 + country);
+  return res.data;
+}
+
+let btnUni = document.querySelector(".btn-uni");
+btnUni.addEventListener("click",async () => {
+  let inp = document.querySelector("input");
+  let ctn = inp.value;
+  let list =await getUniversites(ctn);
+  show(list);
+  
+});
+
+function show(list){
+  
+  let ul = document.querySelector("ul")
+  for(l of list){
+    let li = document.createElement("li");
+    li.innerText = l.name;
+    ul.appendChild(li);
+    // console.log(l.name);
+  }
+}
