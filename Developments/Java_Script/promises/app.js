@@ -78,42 +78,83 @@
 //   Using it to change the color of h1
 
 function changeColor(color, delay) {
-    return new Promise((resolve,reject)=>{
-        setTimeout(() => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
       let h1 = document.querySelector("h1");
       h1.style.color = color;
       resolve("Color changed");
     }, delay);
-    }) 
-    }
-
-changeColor("red", 1000)
-  .then(() => {
-    console.log("Color changed to red");
-    return changeColor("green", 1000);
-  })
-  .then(() => {
-    console.log("Color changed to green");
-    return changeColor("green", 1000);
-  })
-  .then((res) => {
-    console.log("Color changed to orange");
-    console.log(res);
-    return changeColor("orange", 1000);
-  })
-  .then(() => {
-    console.log("Color changed to blue");
-    return changeColor("blue", 1000);
   });
+}
+
+// changeColor("red", 1000)
+//   .then(() => {
+//     console.log("Color changed to red");
+//     return changeColor("green", 1000);
+//   })
+//   .then(() => {
+//     console.log("Color changed to green");
+//     return changeColor("green", 1000);
+//   })
+//   .then((res) => {
+//     console.log("Color changed to orange");
+//     console.log(res);
+//     return changeColor("orange", 1000);
+//   })
+//   .then(() => {
+//     console.log("Color changed to blue");
+//     return changeColor("blue", 1000);
+//   });
 
 //   same thing using async and await
 
-async function change(){
-    
-    await changeColor("red", 1000);
-    await changeColor("green", 1000);
-    await changeColor("orange", 1000);
-    await changeColor("blue", 1000);
+async function change() {
+  await changeColor("red", 1000);
+  await changeColor("green", 1000);
+  await changeColor("orange", 1000);
+  await changeColor("blue", 1000);
 }
 
-change()
+// change()
+
+// Calling API
+
+url = "https://catfact.ninja/fact";
+// fetch(url)
+// .then((res)=>{
+//     console.log(res);
+//     return res.json();
+// })
+// .then((data)=>{
+//   console.log(data);
+// })
+
+async function fetchAPI() {
+  try {
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getFromAxios() {
+  try {
+    let res = await axios.get(url);
+    console.log(res.data.fact);
+    return res.data.fact;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+// do the same thing using axios
+
+let btn = document.querySelector("button");
+btn.addEventListener("click", async () => {
+  let data = await getFromAxios();
+  let p = document.querySelector("p");
+  p.innerText = data;
+});
