@@ -1,5 +1,3 @@
-const sum = require("")
+const someVal = require("./math.js");
 
-console.log(sum(2, 3));
-// the types is sum
-console.log(summ(9,9));
+console.log(someVal);
