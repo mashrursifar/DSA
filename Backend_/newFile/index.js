@@ -1,5 +1,5 @@
 const banana = require("./banana.js");
-const orange = require("./orange");
+const orange = require("./orange.js");
 const apple = require("./apple.js");
 
 let fruits = [banana, orange, apple];
