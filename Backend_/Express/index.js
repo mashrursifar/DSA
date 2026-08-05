@@ -15,8 +15,11 @@ app.get("/", (req, res) => {
 app.get("/search", (req, res) => {
     //   res.send("you are in the search page");
     let { q } = req.query;
+    
+    if(q==null){
+      res.send("You didn't query")
+    }
     res.send(`You search ${q}`);
-    console.log(req.query);
     console.log("You are in the searching page!");
 });
 
