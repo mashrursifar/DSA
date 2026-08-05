@@ -9,5 +9,11 @@
     <h1>We are looking for @<%= username %></h1>
     <h3>For more info</h3>
     <button>Click here</button>
+    <h2>Accounts that you follow</h2>
+    <ul>
+        <% for(let i= 0; i< follower.length;i++){ %>
+            <li> <%= follower[i] %></li>
+        <%} %>
+    </ul>
 </body>
 </html>
