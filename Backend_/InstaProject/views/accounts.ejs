@@ -6,8 +6,14 @@
     <title>Insta</title>
 </head>
 <body>
-    <h1>Account name: @<%= username %></h1>
-    <p>Followers: <%=  %> &nbsp;&nbsp;&nbsp;&nbsp;Following:<%=  %></p>
-    <img src="" alt="">
+    <h1>Account name: @<%= data.name %></h1>
+    <button type="button">Follow</button>
+    <button type="button">Message</button>
+    <p>Followers: <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;Following: <%= data.following %></p>
+    <% for(let i=0; i<data.posts.length;i++){%>
+        <img src="<%= data.posts[i].image  %>" alt="Images" height="200" width="180">
+        <p>Likes: <%= data.posts[i].likes %> &nbsp;&nbsp;&nbsp;&nbsp;Comments: <%= data.posts[i].comments %></p>
+    <%} %>
+    
 </body>
 </html>
