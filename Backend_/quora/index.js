@@ -33,7 +33,7 @@ app.get("/postCreate", (req, res) => {
 });
 
 app.post("/post", (req, res) => {
-
+    
     let { username, heading, content } = req.body;
     posts.push({ username, heading, content });
     res.render("post.ejs", {posts});
