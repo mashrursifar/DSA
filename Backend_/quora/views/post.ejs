@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Quora</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>Quora</h1>
+        
+        <div class="btns">
+            <button id="sign-in" class="btn">Sign up</button>
+            <button type="submit" class="btn" id="post">Post</button>
+            
+        
+        </div>
+        
+    </div>
+        
+    <div class="post">
+        <h4>User</h3>
+        <p>
+            <b>The future of AI</b><br>
+            AI is becoming more and Intelligent day by day.
+        </p>
+        <button class="like">Like</button> <button>Comment</button>
+    </div>
+
+    <% for(post of posts){ %>
+        <div class="post">
+        <h4><%= post.username %></h3>
+        <p>
+            <b><%= post.heading %></b><br>
+            <%= post.content  %>
+        </p>
+        <button class="like">Like</button> <button>Comment</button>
+    </div>
+    <% } %>
+    <script src="/JS/app.js"></script>
+</body>
+</html>

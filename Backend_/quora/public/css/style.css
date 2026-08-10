@@ -1,0 +1,51 @@
+.heading{
+    display: flex;
+    color: #a82723;
+    background-color: rgba(232, 230, 230, 0.412);
+    gap: .5rem;
+    align-items:center ;
+    justify-content: space-between;
+}
+
+
+.btn{
+    color: #a82723;
+    background-color: white;
+    height: 2rem;
+    
+
+}
+
+.post{
+    background-color: beige;
+    width: 25rem;
+    margin-left: .5rem;
+    padding-left: 1.5rem;
+}
+
+.likeTrue{
+    color: white;
+    background-color: rgb(66, 66, 125) ;
+}
+
+.forms form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#post-username{
+    width: 10rem;
+}
+
+#post-heading{
+    width: 20rem;
+}
+
+#post-content{
+    width: 30rem;
+}
+
+#post-create{
+    width: 5rem;
+}
