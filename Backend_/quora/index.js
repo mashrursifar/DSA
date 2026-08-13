@@ -43,3 +43,9 @@ app.post("/post", (req, res) => {
     // res.render("post.ejs", { posts }); if we use it. then every refresh will add last post
     res.redirect("/post");
 });
+
+app.get("/post/:id/edit", (req, res)=>{
+    let id= req.params.id;
+    console.log(id);
+    res.render("edit.ejs",{id,posts});
+})
