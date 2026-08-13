@@ -35,7 +35,19 @@
             <b><%= post.heading %></b><br>
             <%= post.content  %>
         </p>
-        <button class="like">Like</button> <button>Comment</button>
+        <div class="buttons">
+            <div>
+            <button class="like">Like</button> 
+            <button>Comment</button>
+        </div>
+        
+        <div>
+            <button class="edit">Edit</button>
+            <button class="del">Delete</button>
+        </div>
+        </div>
+        
+        
     </div>
     <% } %>
     <script src="/JS/app.js"></script>
