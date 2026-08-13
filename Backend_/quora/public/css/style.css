@@ -27,8 +27,13 @@
 .buttons{
     display: flex;
     justify-content: space-between;
+    margin-right: 1.5rem;
+    color:#a82723;
 }
 
+.btnColor{
+    color: #a82723;
+}
 .likeTrue{
     color: white;
     background-color: rgb(66, 66, 125) ;
