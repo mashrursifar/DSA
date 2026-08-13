@@ -12,7 +12,18 @@ post.addEventListener("click", () => {
     window.location.href = "/postCreate";
 });
 
-let edit = document.querySelector(".edit");
-edit.addEventListener("click", () => {
-    window.location.href = "/post/1/edit";
-});
+let edits = document.querySelectorAll(".edit");
+
+for (let edit of edits){
+    edit.addEventListener("click", () => {
+        let id = edit.dataset.id;
+        window.location.href = `/post/${id}/edit`;
+    });
+}
+
+// let postEdit = document.querySelector("#edit-button");
+
+// postEdit.addEventListener("click", ()=>{
+//     window.location.href = "/post"
+// })
+
