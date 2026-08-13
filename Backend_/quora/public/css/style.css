@@ -64,3 +64,8 @@
 #edit-button{
     width: 5rem;
 }
+
+.cekin{
+    display: flex;
+    gap: .5rem;
+}

@@ -19,14 +19,14 @@
         
     </div>
         
-    <div class="post">
+    <!-- <div class="post">
         <h4>User</h3>
         <p>
             <b>The future of AI</b><br>
             AI is becoming more and Intelligent day by day.
         </p>
         <button class="like">Like</button> <button>Comment</button>
-    </div>
+    </div> -->
 
     <% for(post of posts){ %>
         <div class="post">
@@ -41,10 +41,11 @@
                 <button class="btnColor">Comment</button>
             </div>
         
-            <div>
+            <div class="cekin">
                 <button class="edit btnColor" data-id="<%= post.id %>">Edit</button>
-                <button class="del btnColor">Delete</button>
-                
+                <form action="/post/<%= post.id %>?_method=DELETE" method="post">
+                    <button class="del btnColor">Delete</button>
+                </form>
             </div>
         </div>
         

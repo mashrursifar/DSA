@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Quora|Edit</title>
+</head>
+<body>
+    <h4>PostID: <%= id %></h4>
+    <div class="forms">
+        <form action="/post/<%= id %>?_method=PATCH" method="POST" >
+        <label for="post-username">Username: </label>
+        <input value="<%= post.username %>" placeholder="Enter your username" type="text" name="username" id="post-username">
+        <br>
+        <label for="post-heading">Heading:</label>
+        <input value="<%= post.heading %>" type="text" placeholder="Enter heading" name="heading" id="post-heading">
+        <br>
+        <label for="post-content">Content: </label>
+        <textarea name="content" id="post-content"><%= post.content %></textarea>
+        <br>
+        <button id="edit-button">Edit</button>
+    <script src="/js/app.js"></script>
+</body>
+</html>

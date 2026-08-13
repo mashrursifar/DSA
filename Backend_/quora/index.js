@@ -63,12 +63,13 @@ app.patch("/post/:id", (req, res) => {
     post.content = content;
     post.username = username;
 
-    res.redirect("/post/:id", (req, res) => {
+    res.redirect("/post");
+    
+});
+
+app.delete("/post/:id",(req, res) => {
         let id = req.params.id;
 
         posts = posts.filter((q) => q.id !== id);
         res.redirect("/post");
     });
-});
-
-app.delete();
