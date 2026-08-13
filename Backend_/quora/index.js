@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const { v4: uuid } = require("uuid");
-const methodoverride = require("method-override")
+const methodoverride = require("method-override");
 const port = 8080;
 
-app.use(methodoverride("_method"))
+app.use(methodoverride("_method"));
 
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "public")));
@@ -63,5 +63,12 @@ app.patch("/post/:id", (req, res) => {
     post.content = content;
     post.username = username;
 
-    res.redirect("/post");
+    res.redirect("/post/:id", (req, res) => {
+        let id = req.params.id;
+
+        posts = posts.filter((q) => q.id !== id);
+        res.redirect("/post");
+    });
 });
+
+app.delete();

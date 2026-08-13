@@ -21,9 +21,4 @@ for (let edit of edits){
     });
 }
 
-// let postEdit = document.querySelector("#edit-button");
-
-// postEdit.addEventListener("click", ()=>{
-//     window.location.href = "/post"
-// })
 
