@@ -1,5 +1,13 @@
 const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2");
+const express = require("express");
+const path = require("path");
+const port = 8080;
+
+const app = express();
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -8,28 +16,47 @@ const connection = mysql.createConnection({
     database: "delta_app",
 });
 
-try {
-    connection.query("show tables", (err, result) => {
-        if (err) {
-            throw err;
-        }
-        console.log(result);
+app.listen(port, ()=>{
+    console.log(`Server started at ${port} port`);
+})
+
+app.get("/",(req,res)=>{
+    try {
+        let  q = "select count(id) from user "
+    connection.query(q, (err, result) => {
+        if (err)    throw err;
+        let data = result[0]["count(id)"];
+        res.render("home.ejs", {data});
         
     });
 } catch (err) {
     console.log(err);
 }
+    
+})
+// connection.end();
 
-connection.end();
+// let q = "insert into user(id, username, email, password) values ?";
+// let data = [];
 
+// let getRandomUser = () => {
+//     return [
+//         faker.string.uuid(),
+//         faker.internet.username(),
+//         faker.internet.email(),
+//         faker.internet.password(),
+//     ];
+// };
 
-let getRandomUser = () => {
-    return {
-        id: faker.string.uuid(),
-        username: faker.internet.username(),
-        email: faker.internet.email(),
-        password: faker.internet.password(),
-    };
-};
+// for (let i = 0; i < 100; i++) {
+//     data.push(getRandomUser());
+// }
+// try {
+//     connection.query(q, [data], (err, result) => {
+//         if (err)    throw err;
 
-console.log(getRandomUser());
+//         console.log(result);
+//     });
+// } catch (err) {
+//     console.log(err);
+// }
