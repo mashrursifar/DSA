@@ -1,17 +1,35 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require("@faker-js/faker");
+const mysql = require("mysql2");
 
+const connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "1234",
+    database: "delta_app",
+});
 
-
-
-let getRandomUser = ()=> {
-  return {
-
-    id: faker.string.uuid(),
-    username: faker.internet.username(),
-    email: faker.internet.email(),
-    password: faker.internet.password(),
-    
-  };
+try {
+    connection.query("show tables", (err, result) => {
+        if (err) {
+            throw err;
+        }
+        console.log(result);
+        
+    });
+} catch (err) {
+    console.log(err);
 }
+
+connection.end();
+
+
+let getRandomUser = () => {
+    return {
+        id: faker.string.uuid(),
+        username: faker.internet.username(),
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+    };
+};
 
 console.log(getRandomUser());
