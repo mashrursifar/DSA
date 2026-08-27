@@ -2,9 +2,12 @@ const { faker } = require("@faker-js/faker");
 const mysql = require("mysql2");
 const express = require("express");
 const path = require("path");
+const mongoose = require("mongoose")
 const port = 8080;
 
 const app = express();
+
+mongoose.connect("mongodb://127.0.0.1:27017/test")
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
